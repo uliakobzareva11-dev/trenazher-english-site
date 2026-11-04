@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Тренажёр английского для ЕГЭ: грамматика, словообразование, чтение</title>
+<meta name="description" content="Онлайн тренажёр английского для подготовки к ЕГЭ: правило перед каждой темой, больше 1 500 заданий по грамматике, словообразованию и чтению в формате экзамена, разбор каждой ошибки на русском, озвучка заданий. Попробовать бесплатно, без регистрации.">
+<link rel="canonical" href="https://trenazher-english.ru/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://trenazher-english.ru/">
+<meta property="og:title" content="Тренажёр английского для ЕГЭ">
+<meta property="og:description" content="Правило перед каждой темой, задания как на экзамене и разбор каждой ошибки на русском. Каждое задание можно прослушать.">
+<meta property="og:image" content="https://trenazher-english.ru/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-120.png" sizes="120x120" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>
+// Ученик с личной ссылкой (#код) или с сохранённым кодом сразу попадает в тренажёр.
+// ?lending — посмотреть эту страницу, даже если код сохранён (для Юли).
+(function(){
+  if(location.search.indexOf("lending") > -1) return;
+  var kod = location.hash.length > 1, pamyat = false;
+  try{ pamyat = !!localStorage.getItem("trenazher-dostup"); }catch(e){}
+  if(kod || pamyat) location.replace("/trenazher/" + location.hash);
+})();
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113733723', 'ym');
+    ym(113733723, 'init', {ssr:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113733723" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<style>
+  :root{
+    --bg:#e9f0eb; --card:#f8fbf9; --ink:#1a1a1a; --muted:#5f5f5c;
+    --line:#d3e0d7; --accent:#2f5d50; --accent-ink:#fff; --accent-soft:#d3e6da;
+    --gold:#f4c430; --wrong:#8c3b2f; --wrong-soft:#f7ebe8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16181a; --card:#1f2225; --ink:#ececea; --muted:#a3a3a0;
+      --line:#33373b; --accent:#7fb8a4; --accent-ink:#10201b; --accent-soft:#23342e;
+      --wrong:#d99584; --wrong-soft:#372623;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink);
+       font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+  header{padding:48px 0 40px}
+  .logo{display:flex; align-items:center; gap:10px; font-weight:600; color:var(--muted); font-size:15px; margin-bottom:28px}
+  .logo img{width:32px; height:32px; border-radius:8px}
+  h1{font-size:clamp(30px,6vw,44px); line-height:1.15; margin:0 0 16px; letter-spacing:-.01em}
+  h1 .mark{white-space:nowrap; background:linear-gradient(transparent 72%, var(--gold) 72%, var(--gold) 90%, transparent 90%)}
+  .lead{font-size:19px; color:var(--muted); margin:0 0 28px; max-width:600px}
+  .btn{display:inline-block; padding:14px 22px; border-radius:12px; font:inherit; font-weight:600; text-decoration:none;
+       border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer}
+  .btn.main{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+  .btn:hover{filter:brightness(1.06)}
+  .row{display:flex; flex-wrap:wrap; gap:12px}
+  .note{font-size:14px; color:var(--muted); margin-top:12px}
+  section{padding:36px 0; border-top:1px solid var(--line)}
+  h2{font-size:24px; margin:0 0 18px; line-height:1.25}
+  ul{margin:0; padding-left:1.2em}
+  li{margin:0 0 10px}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px}
+  .card b{display:block; font-size:17px; margin-bottom:4px}
+  .card .num{font-size:28px; font-weight:700; color:var(--accent); line-height:1.1; display:block; margin-bottom:6px}
+  .card span{color:var(--muted); font-size:15px}
+  .demo{margin-bottom:14px}
+  .demo .ttl{font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin-bottom:6px}
+  .demo .ctx{color:var(--muted); font-size:15px; margin:0 0 6px}
+  .demo .q{font-size:18px; margin:0 0 12px}
+  .demo .hint{font-weight:700; color:var(--accent)}
+  .opts{display:flex; flex-wrap:wrap; gap:8px}
+  .opts button{padding:10px 16px; border-radius:10px; border:1px solid var(--line); background:var(--bg); color:var(--ink);
+               font:inherit; cursor:pointer}
+  .opts button.ok{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+  .opts button.no{background:var(--wrong-soft); border-color:var(--wrong)}
+  .why{margin:12px 0 0; font-size:15px; display:none}
+  .why.show{display:block}
+  .why.good b{color:var(--accent)} .why.bad b{color:var(--wrong)}
+  .price{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; margin-bottom:20px}
+  .price .card.pay{border-color:var(--accent); border-width:2px}
+  .price .sum{font-size:26px; font-weight:700; margin:6px 0}
+  .author{display:flex; gap:24px; align-items:center}
+  .author p{margin:0}
+  .faq details{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:0 18px; margin-bottom:10px}
+  .faq summary{cursor:pointer; font-weight:600; padding:15px 0; list-style:none; position:relative; padding-right:28px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+"; position:absolute; right:0; top:12px; font-size:22px; color:var(--accent); font-weight:400}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{margin:0 0 16px}
+  .rez-h{font-size:19px; margin:30px 0 14px}
+  .rez{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px}
+  .rez .card{display:block; text-decoration:none; color:var(--ink)}
+  .rez .card:hover{border-color:var(--accent)}
+  .rez img{display:block; width:100%; height:auto; margin-top:12px; border-radius:8px; border:1px solid var(--line)}
+  .author .foto{width:170px; height:auto; flex:0 0 170px; border-radius:16px; border:1px solid var(--line);
+                box-shadow:0 8px 20px rgba(34,48,43,.14)}
+  @media (max-width:560px){ .author{flex-direction:column; align-items:flex-start; gap:16px} .author .foto{width:150px; flex-basis:auto} }
+  footer{padding:32px 0 48px; border-top:1px solid var(--line); color:var(--muted); font-size:14px}
+  .hero{display:grid; grid-template-columns:1fr 230px; gap:36px; align-items:center}
+  .phone{border:7px solid #22302b; border-radius:26px; overflow:hidden; background:var(--bg);
+         box-shadow:0 14px 32px rgba(34,48,43,.20)}
+  .phone img{display:block; width:100%; height:auto}
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px}
+  .steps .phone{border-width:5px; border-radius:20px; box-shadow:0 8px 20px rgba(34,48,43,.14)}
+  .steps p{margin:12px 0 0; font-size:15px; line-height:1.45}
+  .steps p b{display:block; color:var(--accent)}
+  .ico{display:block; width:34px; height:34px; margin-bottom:10px; color:var(--accent)}
+  @media (max-width:640px){
+    .hero{grid-template-columns:1fr; gap:28px} .hero .phone{width:230px; margin:0 auto}
+    .steps{display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-left:16px; margin:22px -16px 0; padding:0 16px 8px}
+    .steps > div{flex:0 0 62%; scroll-snap-align:start}
+  }
+  /* широкий экран: блоки в колонки (просьба Стаса 04.11: на компьютере пусто по бокам) */
+  section > p, .lead{max-width:760px}
+  .kto{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+  .kto .card{font-size:16px; line-height:1.5}
+  .demos{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .demos .demo{margin:0}
+  .faq{display:grid; grid-template-columns:1fr 1fr; gap:0 14px; align-items:start}
+  .steps .phone{max-width:250px; margin:0 auto}
+  .steps p{max-width:250px; margin-left:auto; margin-right:auto}
+  @media (min-width:900px){ .hero{grid-template-columns:1fr 290px; gap:64px} h1{font-size:50px} header{padding:56px 0 56px} section{padding:48px 0} }
+  @media (max-width:820px){ .kto, .demos, .faq{grid-template-columns:1fr} }
+  @media (max-width:640px){ .wrap{padding:0 16px} }
+  @media (max-width:480px){ header{padding:32px 0 28px} .btn{width:100%; text-align:center} }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Нужна ли регистрация?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Открываете сайт, вписываете имя ученика и занимаетесь. Прогресс сохраняется в браузере на этом устройстве."}}, {"@type": "Question", "name": "Работает ли на телефоне?", "acceptedAnswer": {"@type": "Answer", "text": "Да, в браузере на телефоне и на компьютере. Ничего устанавливать не нужно."}}, {"@type": "Question", "name": "Что можно попробовать бесплатно?", "acceptedAnswer": {"@type": "Answer", "text": "Правила чтения и звуки и тему «Множественное число» в формате ЕГЭ."}}, {"@type": "Question", "name": "Сколько стоит полный доступ?", "acceptedAnswer": {"@type": "Answer", "text": "400 ₽ в месяц. Напишите мне в Telegram или MAX, и я пришлю личную ссылку: с ней тренажёр откроется целиком."}}, {"@type": "Question", "name": "Подходит ли тренажёр для ОГЭ?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Задания сделаны в формате ЕГЭ, но грамматика и правила чтения пригодятся и девятиклассникам."}}, {"@type": "Question", "name": "Можно ли заниматься с вами лично?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Напишите мне в Telegram или MAX, договоримся о занятиях."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="logo"><img src="/favicon.svg" alt="">trenazher-english.ru</div>
+  <div class="hero">
+    <div>
+      <h1>Тренажёр английского <span class="mark">для ЕГЭ</span></h1>
+      <p class="lead">Перед каждой темой правило, задания как на экзамене и понятный разбор каждой ошибки на русском. Каждое задание можно прослушать: ученик привыкает к английской речи на слух и повторяет за голосом, а это пригодится и в аудировании, и в чтении вслух на устной части.</p>
+      <div class="row">
+        <a class="btn main" href="/trenazher/" data-cel="lending_start">Попробовать бесплатно</a>
+      </div>
+      <p class="note">Без регистрации. Работает на телефоне и компьютере.</p>
+    </div>
+    <div class="phone"><img src="/img/oshibka.jpg" width="360" height="560" alt="Задание в формате ЕГЭ: ученик вписал mans, тренажёр объясняет, что правильно men"></div>
+  </div>
+</header>
+
+<section>
+  <h2>Для кого</h2>
+  <div class="kto">
+    <div class="card">Старшеклассникам, которые готовятся к ЕГЭ и хотят набить руку на грамматике и словообразовании.</div>
+    <div class="card">Тем, кому трудно читать по правилам: каждое слово можно прослушать.</div>
+    <div class="card">Репетиторам: ученик занимается сам между уроками и присылает отчёт, где видно, что пройдено и где ошибки.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Что внутри</h2>
+  <div class="grid">
+    <div class="card"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/><path d="M6.5 8h2M6.5 11h2M15.5 8h2M15.5 11h2"/></svg><span class="num">12 тем</span><b>Грамматика в формате ЕГЭ</b><span>258 заданий</span></div>
+    <div class="card"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3.5-10L10 17M4.2 13.5h4.6"/><path d="M13 12h4m-1.5-2.5L18 12l-2.5 2.5"/><path d="M20.5 7v10"/></svg><span class="num">5 тем</span><b>Словообразование в формате ЕГЭ</b><span>114 заданий</span></div>
+    <div class="card"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg><span class="num">28</span><b>Текстов для чтения вслух</b><span>с озвучкой</span></div>
+  </div>
+  <ul style="margin-top:20px">
+    <li><b>Чтение и звуки:</b> четыре типа чтения, дифтонги, сочетания согласных, звуки, за которые снимают балл, окончания -ed и -s.</li>
+    <li><b>Грамматика по месяцам учебного года,</b> с сентября по апрель, и темы кодификатора ЕГЭ.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Как это работает</h2>
+  <p>Открываешь тему, читаешь правило, решаешь задания. Ошибся, и тренажёр сразу показывает верный ответ и объясняет, почему он верный. Задания с ошибками возвращаются на повторение. Регистрироваться не нужно, работает на телефоне и компьютере.</p>
+  <div class="steps">
+    <div><div class="phone"><img src="/img/menu.jpg" width="360" height="640" loading="lazy" alt="Меню тренажёра: темы чтения и звуков"></div>
+      <p><b>1. Выбираешь тему</b>Чтение и звуки или грамматика в формате ЕГЭ.</p></div>
+    <div><div class="phone"><img src="/img/pravilo.jpg" width="360" height="640" loading="lazy" alt="Правило о множественном числе существительных"></div>
+      <p><b>2. Читаешь правило</b>Коротко, с примерами и исключениями.</p></div>
+    <div><div class="phone"><img src="/img/zvuk.jpg" width="360" height="560" loading="lazy" alt="Задание: как читается буква a в слове map"></div>
+      <p><b>3. Решаешь задания</b>Слово можно прослушать, а ошибку тренажёр объяснит.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Попробуйте прямо здесь</h2>
+  <p class="note" style="margin:-8px 0 16px">Два задания из бесплатной темы «Множественное число». Нажмите ответ.</p>
+
+  <div class="demos">
+  <div class="card demo">
+    <div class="ttl">A Walk in the Forest</div>
+    <p class="ctx">Last weekend my family went to the national park.</p>
+    <p class="q">We saw two ___ drinking water from the lake. <span class="hint">DEER</span></p>
+    <div class="opts" data-a="deer"><button>deers</button><button>deer</button><button>deeres</button></div>
+    <p class="why">Оленей два, но deer во множественном числе не меняется: one deer, two deer.</p>
+  </div>
+
+  <div class="card demo">
+    <div class="ttl">After the Holiday</div>
+    <p class="ctx">We spent two weeks at the seaside and took hundreds of pictures.</p>
+    <p class="q">When we came back, I printed our ___ and put them into a big album. <span class="hint">PHOTO</span></p>
+    <div class="opts" data-a="photos"><button>photoes</button><button>photo</button><button>photos</button></div>
+    <p class="why">Фотографий много (put them). Photo исключение: после o только -s, photos.</p>
+  </div>
+  </div>
+
+  <div class="row" style="margin-top:8px">
+    <a class="btn main" href="/trenazher/" data-cel="lending_start">Решать дальше бесплатно</a>
+  </div>
+</section>
+
+<section>
+  <h2>Для репетиторов</h2>
+  <div class="hero">
+    <div>
+      <p>Ученик занимается между уроками сам, а вы видите, что он сделал. Он нажимает «отчёт для репетитора» и присылает вам текст в мессенджер, когда удобно.</p>
+      <p style="margin-bottom:8px">В отчёте:</p>
+      <ul>
+        <li>сколько тем пройдено и сколько заданий решено;</li>
+        <li>какая доля заданий с ошибкой;</li>
+        <li>темы, где ученик ошибается чаще всего, и когда ошибся последний раз;</li>
+        <li>что пройдено по разделам.</li>
+      </ul>
+      <p>Урок можно начать сразу со слабой темы, а не с проверки домашнего задания.</p>
+    </div>
+    <div class="phone"><img src="/img/otchet.jpg" width="360" height="630" loading="lazy" alt="Отчёт для репетитора: пройдено тем, доля ошибок, где ученик ошибается чаще всего"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Что бесплатно, а что по подписке</h2>
+  <div class="price">
+    <div class="card">
+      <b>Бесплатно</b>
+      <div class="sum">0 ₽</div>
+      <span>Без регистрации: правила чтения и звуки и тема «Множественное число» в формате ЕГЭ.</span>
+    </div>
+    <div class="card pay">
+      <b>По подписке</b>
+      <div class="sum">400 ₽ в месяц</div>
+      <span>28 текстов для чтения вслух, вся остальная грамматика и словообразование, больше 1 200 заданий.</span>
+    </div>
+  </div>
+  <p>Напишите мне, и я пришлю личную ссылку: с ней тренажёр откроется целиком.</p>
+  <div class="row">
+    <a class="btn main" href="https://t.me/Julia_2624" target="_blank" rel="noopener" data-cel="napisat">Написать в Telegram</a>
+    <a class="btn" href="https://max.ru/u/f9LHodD0cOIni4VD9GPPebr2TL49Ddd1BnD9yRRjR-DYDKCC7k2M3nYzqPA" target="_blank" rel="noopener" data-cel="napisat">Написать в MAX</a>
+  </div>
+</section>
+
+<section>
+  <h2>Вопросы и ответы</h2>
+  <div class="faq">
+    <details><summary>Нужна ли регистрация?</summary>
+      <p>Нет. Открываете сайт, вписываете имя ученика и занимаетесь. Прогресс сохраняется в браузере на этом устройстве.</p></details>
+    <details><summary>Работает ли на телефоне?</summary>
+      <p>Да, в браузере на телефоне и на компьютере. Ничего устанавливать не нужно.</p></details>
+    <details><summary>Что можно попробовать бесплатно?</summary>
+      <p>Правила чтения и звуки и тему «Множественное число» в формате ЕГЭ.</p></details>
+    <details><summary>Сколько стоит полный доступ?</summary>
+      <p>400 ₽ в месяц. Напишите мне в Telegram или MAX, и я пришлю личную ссылку: с ней тренажёр откроется целиком.</p></details>
+    <details><summary>Подходит ли тренажёр для ОГЭ?</summary>
+      <p>Да. Задания сделаны в формате ЕГЭ, но грамматика и правила чтения пригодятся и девятиклассникам.</p></details>
+    <details><summary>Можно ли заниматься с вами лично?</summary>
+      <p>Да. Напишите мне в Telegram или MAX, договоримся о занятиях.</p></details>
+  </div>
+</section>
+
+<section>
+  <h2>Кто сделал</h2>
+  <div class="author">
+    <img class="foto" src="/img/yulia.jpg" width="340" height="425" loading="lazy" alt="Юлия, репетитор английского, автор тренажёра">
+    <p>Меня зовут Юлия, я репетитор английского 13 лет, филолог германист. Тренажёр делала для своих учеников, чтобы между уроками они отрабатывали правила сами. Письмо и эссе разбираем на занятиях со мной.</p>
+  </div>
+  <h3 class="rez-h">Результаты моих учениц на ЕГЭ</h3>
+  <div class="rez">
+    <a class="card" href="/img/ege2026-ustnaya.png" target="_blank" rel="noopener">
+      <span class="num">17 из 20</span><b>Устная часть</b><span>ЕГЭ 2026</span>
+      <img src="/img/ege2026-ustnaya.png" width="1000" height="609" loading="lazy" alt="Таблица баллов ЕГЭ 2026, устная часть: итого 17 из 20">
+    </a>
+    <a class="card" href="/img/ege2026-pismo.png" target="_blank" rel="noopener">
+      <span class="num">16 из 20</span><b>Письмо и эссе</b><span>ЕГЭ 2026</span>
+      <img src="/img/ege2026-pismo.png" width="1000" height="420" loading="lazy" alt="Таблица баллов ЕГЭ 2026, письмо и эссе: итого 16 из 20">
+    </a>
+    <a class="card" href="/img/ege2025-pismo.png" target="_blank" rel="noopener">
+      <span class="num">17 из 20</span><b>Письмо и эссе</b><span>ЕГЭ 2025, Москва</span>
+      <img src="/img/ege2025-pismo.png" width="1000" height="520" loading="lazy" alt="Таблица баллов ЕГЭ 2025, письменная часть: письмо 5 из 6, эссе 12 из 14">
+    </a>
+  </div>
+  <p class="note">Нажмите на карточку, чтобы открыть таблицу баллов крупно.</p>
+</section>
+
+<footer>
+  trenazher-english.ru · <a href="/trenazher/" style="color:inherit">Открыть тренажёр</a>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll(".opts").forEach(function(box){
+  box.addEventListener("click", function(e){
+    var b = e.target.closest("button"); if(!b || box.dataset.done) return;
+    box.dataset.done = 1;
+    var why = box.nextElementSibling, ok = b.textContent === box.dataset.a;
+    box.querySelectorAll("button").forEach(function(x){ if(x.textContent === box.dataset.a) x.classList.add("ok"); });
+    if(!ok) b.classList.add("no");
+    why.innerHTML = (ok ? "<b>Верно.</b> " : "<b>Неверно, правильно " + box.dataset.a + ".</b> ") + why.innerHTML;
+    why.classList.add("show", ok ? "good" : "bad");
+  });
+});
+document.querySelectorAll("[data-cel]").forEach(function(a){
+  a.addEventListener("click", function(){ try{ ym(113733723, "reachGoal", a.dataset.cel); }catch(e){} });
+});
+</script>
+</body>
+</html>
