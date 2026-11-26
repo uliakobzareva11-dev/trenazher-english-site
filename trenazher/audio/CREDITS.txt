@@ -1,0 +1,33 @@
+BRITISH SYNTHETIC AUDIO FOR THE ENGLISH TRAINER
+Voice: Cori Samuel, en_GB-cori-medium, generated locally with Piper 1.8.0.
+Model revision: 0ca208afc2a2ee102b1e961e72e0a7e4907be3d0.
+Model card: https://huggingface.co/rhasspy/piper-voices/blob/0ca208afc2a2ee102b1e961e72e0a7e4907be3d0/en/en_GB/cori/medium/MODEL_CARD
+Training source: Hi-Fi Multi-Speaker English TTS Dataset (Hi-Fi TTS), NVIDIA Corporation.
+Dataset authors: Evelina Bakhturina, Eugene Lavrukhin, Boris Ginsburg, Yang Zhang (2021).
+Dataset: https://www.openslr.org/109/ ; license CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+The underlying recordings are from LibriVox reader Cori Samuel. These files are newly synthesized speech, not recordings of her reading the supplied text. No endorsement is implied.
+Text: trainer reading passages, words and exercise sentences; source references are retained in the application.
+Piper software: GPL-3.0-or-later, https://github.com/OHF-Voice/piper1-gpl . Software/model are not included in the audio distribution.
+
+Generation settings and provenance:
+{
+  "voice": "en_GB-cori-medium",
+  "length_scale": 1.12,
+  "volume": 0.85,
+  "sample_rate": 22050,
+  "channels": 1,
+  "mp3_kbps": 48,
+  "model_revision": "0ca208afc2a2ee102b1e961e72e0a7e4907be3d0",
+  "model_sha256": "2e0a55e140de672aa19b182602b407607bd2e6c35fc6020c0b1516053c02e995",
+  "piper_version": "1.8.0",
+  "onnxruntime_version": "1.32.0",
+  "lameenc_version": "1.9.0",
+  "python_version": "3.12.14"
+}
+Corpus fingerprint: c8828302c5a68f386a2d5d52822aa8a57b8cd7516bf5d1a63e22ec0c59976991
+MP3 encoded locally with lameenc 1.9.0 (LGPL-3.0-or-later), https://github.com/chrisstaite/lameenc . Encoder is not included with these audio files.
+Validation: every PCM signal checked for duration, peak and RMS; every encoded MP3 frame checked for structure, mono, 22050Hz, 48kbps and duration. Subjective pronunciation still requires teacher listening.
+
+Source HTML SHA256: e0d08c7fc734b2a7c19d6737855b17dbf6633a5c3b428c2ddb4e27b1c338cb2b
+Model configuration SHA256: 7204f5ead17759278419129290e51ebb414f09f7ac6cd0e567532592956bbbac
+Inference defaults from pinned model config: noise_scale=0.5; noise_w=0.333; normalize_audio=true. Inference is stochastic; manifest hashes identify the actual generated files.
